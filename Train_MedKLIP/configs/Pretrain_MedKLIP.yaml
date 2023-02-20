@@ -1,0 +1,37 @@
+train_file: 'Path/To/data_file/rad_graph_metric_train.json'
+valid_file: 'Path/To//data_file/rad_graph_metric_validate.json'
+test_file: 'Path/To/data_file/rad_graph_metric_test.json'
+label_file: 'Path/To/data_file/landmark_observation_adj_mtx.npy'
+disease_book: 'Path/To//data_file/observation explanation.json'
+
+image_res: 224
+patch_size: 16
+num_sentences: 12
+num_tokens: 32
+vision_width: 768
+fea_width: 197
+embed_dim: 256
+batch_size: 48
+test_batch_size: 32
+temp: 0.07
+mlm_probability: 0.15
+queue_size: 8192
+momentum: 0.995
+alpha: 0.4
+d_model: 256
+res_base_model: 'resnet50'
+num_queries: 75
+dropout: 0.1
+attribute_set_size: 2
+N: 4
+H: 4 
+no_cl: False
+exclude_class: False
+text_encoder: 'emilyalsentzer/Bio_ClinicalBERT'
+shuffle_ratio: 0.5
+optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.02}
+schedular: {sched: cosine, lr: 1e-4, epochs: 100, min_lr: 1e-5, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 5, cooldown_epochs: 0}
+
+
+
+
