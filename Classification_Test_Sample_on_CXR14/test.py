@@ -14,7 +14,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from sklearn.metrics import roc_auc_score,precision_recall_curve,accuracy_score
 
-from models.model_TQN_rad_graph_location_loss_with_book import TQN
+from models.model_MedKLIP import MedKLIP
 from dataset.dataset import Chestxray14_Dataset
 from models.tokenization_bert import BertTokenizer
 
@@ -90,7 +90,7 @@ def test(args,config):
     disease_book_tokenizer = get_tokenizer(tokenizer,disease_book).to(device)
     
     print("Creating model")
-    model = TQN(config, disease_book_tokenizer)
+    model = MedKLIP(config, disease_book_tokenizer)
     model = nn.DataParallel(model, device_ids = [i for i in range(torch.cuda.device_count())])
     model = model.to(device)  
 

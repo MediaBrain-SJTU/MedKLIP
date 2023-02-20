@@ -23,10 +23,10 @@ args.attribute_set_size
 
 
 
-class TQN(nn.Module):
+class MedKLIP(nn.Module):
 
     def __init__(self, config, disease_book):
-        super(TQN, self).__init__()
+        super(MedKLIP, self).__init__()
 
         self.d_model = config['d_model']
         # ''' book embedding'''
