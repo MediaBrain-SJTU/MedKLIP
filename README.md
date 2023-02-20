@@ -24,7 +24,7 @@ Check checkpoints dir to download our pre-trained model.
 
 ## Pre-train:
 Our pre-train code is given in ```Train_MedKLIP```. 
-* Check the ```Train_MedKLIP\data_file``` dir and download the pre-processed npy label file. 
+* Check the ```Train_MedKLIP\data_file``` dir and download the pre-processed data files. 
 * Modify the path as you disire, and by python ```PreTrain_MedKLIP\train_MedKLIP.py``` to pre-train.
 
 ## Acknowledge
