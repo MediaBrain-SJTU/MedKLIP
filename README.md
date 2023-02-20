@@ -13,11 +13,14 @@ The official implementation  code for "MedKLIP: Medical Knowledge Enhanced Langu
 Check checkpoints dir to download our pre-trained model.
 
 * **Zero-Shot Classification:**
+    
     We give an example on CXR14 in ```Sample_Zero-Shot_Classification_CXR14```. Modify the path, and test our model by ```python test.py```
 * **Zero-Shot Grounding:**
+    
     We give an example on RSNA_Pneumonia in ```Sample_Zero-Shot_Grounding_RSNA```. Modify the path, and test our model by ```python test.py```
 * **Finetuning:**
-    We give segmentation and classification finetune code on SIIM_ACR dataset in ```Sample_Finetuning_SIIMACR```. Modify the path, and finetune our model by ```python I1_classification/test_res_ft.py``` or ```python I2_segementation/test_res_ft.py```
+    
+    We give segmentation and classification finetune code on SIIM_ACR dataset in ```Sample_Finetuning_SIIMACR```. Modify the path, and finetune our model by ```python I1_classification/train_res_ft.py``` or ```python I2_segementation/train_res_ft.py```
 
 ## Pre-train:
 Our pre-train code is given in ```Train_MedKLIP```. 
