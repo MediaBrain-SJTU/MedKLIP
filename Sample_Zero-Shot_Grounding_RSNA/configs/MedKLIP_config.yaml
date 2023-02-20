@@ -1,0 +1,17 @@
+test_file: '/Path/To/test.csv'
+disease_book: '/Path/To/observation explanation.json'
+
+image_res: 224
+test_batch_size: 64
+
+d_model: 256
+res_base_model: 'resnet50'
+num_queries: 75
+dropout: 0.1
+attribute_set_size: 2
+N: 4
+H: 4
+text_encoder: 'emilyalsentzer/Bio_ClinicalBERT'
+
+
+

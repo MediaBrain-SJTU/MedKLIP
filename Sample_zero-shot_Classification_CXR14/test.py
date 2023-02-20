@@ -149,7 +149,6 @@ if __name__ == '__main__':
     parser.add_argument('--model_path', default='/Path/To/checkpoint.pth')
     parser.add_argument('--device', default='cuda')
     parser.add_argument('--gpu', type=str,default='1', help='gpu')
-    parser.add_argument('--action', default='train')
     args = parser.parse_args()
 
     config = yaml.load(open(args.config, 'r'), Loader=yaml.Loader)
