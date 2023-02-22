@@ -40,28 +40,6 @@ class MedKLIP(nn.Module):
         self.disease_embedding_layer = nn.Linear(768,256)
         self.cl_fc = nn.Linear(256,768)
         
-        self.disease_name = [
-            'normal', 'clear', 'sharp', 'sharply', 'unremarkable', 'intact', 'stable', 'free',
-            'effusion', 'opacity', 'pneumothorax', 'edema', 'atelectasis', 'tube', 'consolidation', 'process', 'abnormality', 'enlarge', 'tip', 'low',
-            'pneumonia', 'line', 'congestion', 'catheter', 'cardiomegaly', 'fracture', 'air', 'tortuous', 'lead', 'disease', 'calcification', 'prominence',
-            'device', 'engorgement', 'picc', 'clip', 'elevation', 'expand', 'nodule', 'wire', 'fluid', 'degenerative', 'pacemaker', 'thicken', 'marking', 'scar',
-            'hyperinflate', 'blunt', 'loss', 'widen', 'collapse', 'density', 'emphysema', 'aerate', 'mass', 'crowd', 'infiltrate', 'obscure', 'deformity', 'hernia',
-            'drainage', 'distention', 'shift', 'stent', 'pressure', 'lesion', 'finding', 'borderline', 'hardware', 'dilation', 'chf', 'redistribution', 'aspiration',
-            'tail_abnorm_obs', 'excluded_obs'
-        ]
-        
-        self.excluded_disease = [
-            'pneumonia',
-            'infiltrate',
-            'mass',
-            'nodule',
-            'emphysema',
-            'fibrosis',
-            'thicken',
-            'hernia'
-        ]
-        
-        self.keep_class_dim = [self.disease_name.index(i) for i in self.disease_name if i not in self.excluded_disease ]
         ''' visual backbone'''
         self.resnet_dict = {"resnet18": models.resnet18(pretrained=False),
                             "resnet50": models.resnet50(pretrained=False)}
