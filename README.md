@@ -10,7 +10,7 @@ The official implementation  code for "MedKLIP: Medical Knowledge Enhanced Langu
 [**Arxiv Version**](https://arxiv.org/abs/2301.02228)
 
 ## Quick Start:
-Check checkpoints dir to download our pre-trained model.
+Check checkpoints dir to download our pre-trained model. It can be used for all zero-shot && finetuning tasks 
 
 * **Zero-Shot Classification:**
     
