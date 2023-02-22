@@ -115,7 +115,7 @@ def main(args, config):
             drop_last=False,
         )
 
-    model = ModelRes_ft(res_base_model='resnet50',out_size=1,imagenet_pretrain = args.imagenet_pretrain)
+    model = ModelRes_ft(res_base_model='resnet50',out_size=1)
     model = nn.DataParallel(model, device_ids = [i for i in range(torch.cuda.device_count())])
     model = model.to(device) 
 
