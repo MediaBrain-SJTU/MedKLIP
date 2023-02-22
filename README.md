@@ -28,7 +28,7 @@ Our pre-train code is given in ```Train_MedKLIP```.
 * Modify the path as you disire, and ```python PreTrain_MedKLIP\train_MedKLIP.py``` to pre-train.
 
 ## Acknowledge
-We borrow some pre-process code from [AGXnet](https://github.com/batmanlab/AGXNet)
+We borrow some pre-process codes from [AGXnet](https://github.com/batmanlab/AGXNet)
 
 ## Contact
 If you have any question, please feel free to contact wtzxxxwcy02@sjtu.edu.cn.
