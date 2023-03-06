@@ -32,7 +32,7 @@ class MedKLIP_Dataset(Dataset):
             'drainage', 'distention', 'shift', 'stent', 'pressure', 'lesion', 'finding', 'borderline', 'hardware', 'dilation', 'chf', 'redistribution', 'aspiration',
             'tail_abnorm_obs', 'excluded_obs'
         ]
-        self.label_np = np.load(np_path)
+        self.rad_graph_results = np.load(np_path)
         normalize = transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
         if mode == 'train':
             self.transform = transforms.Compose([                        
@@ -55,28 +55,11 @@ class MedKLIP_Dataset(Dataset):
     
     def __getitem__(self, index):
         img_path = self.img_path_list[index]
-        class_label = self.label_np[self.ann[img_path]["labels_id"],:,:] # (51, 75)
+        class_label = self.rad_graph_results[self.ann[img_path]["labels_id"],:,:] # (51, 75)
         labels = np.zeros(class_label.shape[-1]) -1
-        index_list = []
-        for i in range(class_label.shape[1]):
-            temp_list = []
-            if 0 in class_label[:,i]:
-                labels[i] = 0
-                
-            if 1 in class_label[:,i]:
-                labels[i] = 1
-                temp_list.append(random.choice(np.where(class_label[:,i] == 1)[0]))
-                try:
-                    temp_list = temp_list + random.sample(np.where(class_label != 1)[0].tolist(),7)
-                except:
-                    print('fatal error')
-            if temp_list == []:
-                temp_list = temp_list +random.sample(np.where(class_label != 1)[0].tolist(),8)
-            index_list.append(temp_list)
+        labels, index_list = self.triplet_extraction(class_label)
         index_list = np.array(index_list)
-                
-                
-                
+                       
         img = PIL.Image.open(img_path).convert('RGB')   
         image = self.transform(img)
 
@@ -85,6 +68,29 @@ class MedKLIP_Dataset(Dataset):
             "label": labels,
             'index': index_list
             }
+    
+    def triplet_extraction(self, class_label):
+        exist_labels = np.zeros(class_label.shape[-1]) -1
+        position_list = []
+        for i in range(class_label.shape[1]):
+            temp_list = []
+            ### extract the exist label for each entity and maintain -1 if not mentioned. ###
+            if 0 in class_label[:,i]:
+                exist_labels[i] = 0
+                
+            if 1 in class_label[:,i]:
+                exist_labels[i] = 1
+                ### if the entity exists try to get its position.### 
+                ### Note that, the contrastive loss will only be caculated on exist entity as it is meaningless to predict their position for the non-exist entities###
+                temp_list.append(random.choice(np.where(class_label[:,i] == 1)[0]))
+                try:
+                    temp_list = temp_list + random.sample(np.where(class_label != 1)[0].tolist(),7)
+                except:
+                    print('fatal error')
+            if temp_list == []:
+                temp_list = temp_list +random.sample(np.where(class_label != 1)[0].tolist(),8)
+            position_list.append(temp_list)
+        return exist_labels, position_list
     
     def __len__(self):
         return len(self.ann)
