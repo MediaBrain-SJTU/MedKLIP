@@ -45,7 +45,7 @@ class Chestxray14_Dataset(Dataset):
             ])   
 
     def __getitem__(self, index):
-        img_path = self.img_path_list[index].replace('/mnt/cfs/xmzhang/DATA/ChestXray8/','/remote-home/share/medical/public/ChestXray8/')
+        img_path = self.img_path_list[index]
         class_label = self.class_list[index]
         img = PIL.Image.open(img_path).convert('RGB')   
         image = self.transform(img)
