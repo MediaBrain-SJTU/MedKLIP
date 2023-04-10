@@ -38,8 +38,8 @@ for disease in chexray14_cls:
     else:
         mapping.append(-1)
 MIMIC_mapping = [ _ for i,_ in enumerate(mapping) if _ != -1]
-chexray8_mapping = [ i for i,_ in enumerate(mapping) if _ != -1]
-target_class = [ chexray14_cls[i] for i in chexray8_mapping ]
+chexray14_mapping = [ i for i,_ in enumerate(mapping) if _ != -1]
+target_class = [ chexray14_cls[i] for i in chexray14_mapping ]
 
 def compute_AUCs(gt, pred, n_class):
     """Computes Area Under the Curve (AUC) from prediction scores.
@@ -109,7 +109,7 @@ def test(args,config):
     model.eval()
     for i, sample in enumerate(test_dataloader):
         image = sample['image']
-        label = sample['label'][:,chexray8_mapping].float().to(device)
+        label = sample['label'][:,chexray14_mapping].float().to(device)
         gt = torch.cat((gt, label), 0)
         input_image = image.to(device,non_blocking=True)  
         with torch.no_grad():

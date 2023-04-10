@@ -23,14 +23,8 @@ class Chestxray14_Dataset(Dataset):
         # self.img_path_list = np.asarray(data_info.iloc[:,0])
         # self.class_list = np.asarray(data_info.iloc[:,3:])
         
-        if is_train==True:
-            total_len = int(0.01*len(data_info))
-            choice_list = np.random.choice(range(len(data_info)), size = total_len,replace= False)
-            self.img_path_list = np.asarray(data_info.iloc[:,0])[choice_list]
-            self.class_list = np.asarray(data_info.iloc[:,3:])[choice_list]
-        else:
-            self.img_path_list = np.asarray(data_info.iloc[:,0])
-            self.class_list = np.asarray(data_info.iloc[:,3:])
+        self.img_path_list = np.asarray(data_info.iloc[:,0])
+        self.class_list = np.asarray(data_info.iloc[:,3:])
             
 
         normalize = transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
