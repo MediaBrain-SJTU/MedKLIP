@@ -158,8 +158,8 @@ class MedKLIP(nn.Module):
             memory_key_padding_mask=None, pos=None, query_pos=None)
         out = self.dropout_feas(features)
         if is_train == True and no_cl == False:
-            anatomy_query = self.ana_book[smaple_index,:] # batch, 4 , dim
-             # [Q,B,A]
+            anatomy_query = self.ana_book[smaple_index,:] # batch, Q , position_num ,dim
+            # [Q,B,A]
             ll = out.transpose(0,1) # B Q A
             Q = ll.shape[1]
             ll = ll.reshape(ll.shape[0]*ll.shape[1],-1)
@@ -167,7 +167,7 @@ class MedKLIP(nn.Module):
             ll = ll.unsqueeze(dim =-1)
             #ll = ll.reshape(B,Q,-1)
             anatomy_query = anatomy_query.reshape(B*Q,8,768)
-            ll = torch.bmm(anatomy_query, ll ).squeeze()  # B Q 4
+            ll = torch.bmm(anatomy_query, ll ).squeeze()  # B Q position_num
             cl_labels = torch.zeros((ll.shape[0])).to(device)
             if exclude_class == True:
                 cl_labels = cl_labels.reshape(B,Q)
