@@ -84,11 +84,11 @@ class MedKLIP_Dataset(Dataset):
                 ### Note that, the contrastive loss will only be caculated on exist entity as it is meaningless to predict their position for the non-exist entities###
                 temp_list.append(random.choice(np.where(class_label[:,i] == 1)[0]))
                 try:
-                    temp_list = temp_list + random.sample(np.where(class_label != 1)[0].tolist(),7)
+                    temp_list = temp_list + random.sample(np.where(class_label[:,i] != 1)[0].tolist(),7)
                 except:
                     print('fatal error')
             if temp_list == []:
-                temp_list = temp_list +random.sample(np.where(class_label != 1)[0].tolist(),8)
+                temp_list = temp_list +random.sample(np.where(class_label[:,i] != 1)[0].tolist(),8)
             position_list.append(temp_list)
         return exist_labels, position_list
     
