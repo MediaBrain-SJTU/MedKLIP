@@ -2,7 +2,6 @@
 
 ## Introduction: 
 
-
 The official implementation  code for "MedKLIP: Medical Knowledge Enhanced Language-Image Pre-Training".
 
 [**Paper Web**](https://chaoyi-wu.github.io/MedKLIP/) 
