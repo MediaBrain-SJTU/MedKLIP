@@ -5,4 +5,6 @@ rad_graph_metric_train.json: https://pan.baidu.com/s/1Irkgp2o3VNfiCp7_uoitEQ?pwd
 rad_graph_metric_validate.json: https://pan.baidu.com/s/1Irkgp2o3VNfiCp7_uoitEQ?pwd=6rlw
 rad_graph_metric_test.json: https://pan.baidu.com/s/1Irkgp2o3VNfiCp7_uoitEQ?pwd=6rlw
 
+or GoogleDrive: https://drive.google.com/drive/folders/1HBShH7J_pO8onkzuweDgDq2QPqj6zjG_?usp=sharing
+
 We borrow the pre-processing codes from https://github.com/batmanlab/AGXNet to clean the original rad-graph results.
