@@ -1,8 +1,8 @@
-# MedKLIP:Medical Knowledge Enhanced Language-Image Pre-Training
+# MedKLIP: Medical Knowledge Enhanced Language-Image Pre-Training in Radiology
 
 ## Introduction: 
 
-The official implementation  code for "MedKLIP: Medical Knowledge Enhanced Language-Image Pre-Training".
+The official implementation  code for "MedKLIP: Medical Knowledge Enhanced Language-Image Pre-Training in Radiology".
 
 [**Paper Web**](https://chaoyi-wu.github.io/MedKLIP/) 
 
