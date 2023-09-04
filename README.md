@@ -34,7 +34,7 @@ We borrow some pre-process codes from [AGXnet](https://github.com/batmanlab/AGXN
 @article{wu2023medklip,
   title={MedKLIP: Medical Knowledge Enhanced Language-Image Pre-Training},
   author={Wu, Chaoyi and Zhang, Xiaoman and Zhang, Ya and Wang, Yanfeng and Xie, Weidi},
-  journal={arXiv preprint arXiv:2301.02228},
+  journal={Proceedings of the IEEE/CVF International Conference on Computer Vision},
   year={2023}
 }
 ```
