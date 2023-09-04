@@ -29,5 +29,16 @@ Our pre-train code is given in ```Train_MedKLIP```.
 ## Acknowledge
 We borrow some pre-process codes from [AGXnet](https://github.com/batmanlab/AGXNet)
 
+## Citation
+```
+@article{wu2023medklip,
+  title={Medklip: Medical knowledge enhanced language-image pre-training},
+  author={Wu, Chaoyi and Zhang, Xiaoman and Zhang, Ya and Wang, Yanfeng and Xie, Weidi},
+  journal={medRxiv},
+  pages={2023--01},
+  year={2023},
+  publisher={Cold Spring Harbor Laboratory Press}
+}
+```
 ## Contact
 If you have any question, please feel free to contact wtzxxxwcy02@sjtu.edu.cn.
