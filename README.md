@@ -32,12 +32,10 @@ We borrow some pre-process codes from [AGXnet](https://github.com/batmanlab/AGXN
 ## Citation
 ```
 @article{wu2023medklip,
-  title={Medklip: Medical knowledge enhanced language-image pre-training},
+  title={MedKLIP: Medical Knowledge Enhanced Language-Image Pre-Training},
   author={Wu, Chaoyi and Zhang, Xiaoman and Zhang, Ya and Wang, Yanfeng and Xie, Weidi},
-  journal={medRxiv},
-  pages={2023--01},
-  year={2023},
-  publisher={Cold Spring Harbor Laboratory Press}
+  journal={arXiv preprint arXiv:2301.02228},
+  year={2023}
 }
 ```
 ## Contact
